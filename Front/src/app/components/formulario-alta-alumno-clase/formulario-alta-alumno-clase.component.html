@@ -1,0 +1,26 @@
+<div class="list-group mt-5">
+    
+    
+    <div class="list-group-item flex-column align-items-start col-lg-8 offset-lg-2">
+      <h3>Nueva Alumno en Clase</h3>
+      <form (ngSubmit)="agregarelacion()">
+      <div class="form-group form-control-lg">
+        <div class="form-group">
+            <label for="alumnoSelect" class="form-label">Clase</label>
+            <select class="form-select" [(ngModel)]="claseSeleccionada" [ngModelOptions]="{standalone: true}" id="claseSelect">
+              <option [value]="clase.value" *ngFor="let clase of clases">{{ clase.nombre }}</option>
+            </select>
+          </div>
+      </div>
+      <div class="form-group form-control-lg">
+        <div class="form-group">
+            <label for="alumnoSelect" class="form-label">Alumno</label>
+            <select class="form-select" [(ngModel)]="alumnoSeleccionado" [ngModelOptions]="{standalone: true}" id="alumnoSelect">
+              <option [value]="alumno.value"  *ngFor="let alumno of alumnos"> {{ alumno.nombre }}</option>
+            </select>
+          </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block btn-lg mt-2">Guardar</button>
+    </form>
+    </div>
+  </div>

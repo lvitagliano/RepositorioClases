@@ -1,0 +1,29 @@
+<div class="list-group mt-5">
+    <div class="list-group-item flex-column align-items-start col-lg-8 offset-lg-2">
+        <h3>Clases</h3>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Profesor</th>
+        <th scope="col">Materia</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let clase of listClases">
+        <th scope="row">{{ clase.nombre}}</th>
+        <th scope="row">{{ clase.profesor.apellido}}</th>
+        <th scope="row">{{ clase.materia.nombre}}</th>
+        <td><button type="button" (click)="myFunction(clase.claseId)" class="btn btn-danger">Eliminar</button>
+          <a class="nav-link mt-2" href="alumnosporclase/{{clase.claseId}}">Ver alumnos</a>
+       
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+

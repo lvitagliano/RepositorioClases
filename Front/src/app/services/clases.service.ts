@@ -91,6 +91,7 @@ export class ClasesService {
     });
     const apiUrl = this.BaseURL + 'clase/Create'; 
 
+    console.log(ClaseDto)
     return this.http.post(apiUrl, ClaseDto, { headers });
   }
 

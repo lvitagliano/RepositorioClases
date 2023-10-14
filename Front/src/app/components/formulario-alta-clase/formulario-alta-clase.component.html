@@ -13,7 +13,7 @@
         <div class="form-group">
             <label for="profesorSelect" class="form-label">Profesor</label>
             <select class="form-select" [(ngModel)]="profesorSeleccionado" [ngModelOptions]="{standalone: true}" id="profesorSelect">
-              <option [value]="profesorSeleccionado" *ngFor="let profesor of listProfesores">{{ profesor.nombre }} {{ profesor.apellido }}</option>
+              <option [value]="objeto ? profesorSeleccionado : profesor.profesorId" *ngFor="let profesor of listProfesores">{{ profesor.nombre }} {{ profesor.apellido }}</option>
             </select>
           </div>
       </div>
@@ -21,7 +21,7 @@
         <div class="form-group">
             <label for="materiaSelect" class="form-label">Materia</label>
             <select class="form-select" [(ngModel)]="materiaSeleccionada" [ngModelOptions]="{standalone: true}" id="materiaSelect">
-              <option [value]="materiaSeleccionada"  *ngFor="let materia of listMaterias"> {{ materia.nombre }}</option>
+              <option [value]="objeto ? materiaSeleccionada : materia.materiaId"  *ngFor="let materia of listMaterias"> {{ materia.nombre }}</option>
             </select>
           </div>
       </div>

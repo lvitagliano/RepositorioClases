@@ -12,7 +12,9 @@
       <tr class="table-active">
         <tr *ngFor="let materias of listMaterias">
           <th scope="row">{{ materias.nombre}}</th>
-          <td><button type="button" (click)="delete(materias.materiaId)" class="btn btn-danger">Eliminar</button></td>
+          <td><button type="button" (click)="delete(materias.materiaId)" class="btn btn-danger">Eliminar</button>
+            <button type="button" (click)="redirigirARuta(materias.materiaId)" class="btn btn-warning" style="margin-left: 10px;">Editar</button> 
+          </td>
   
         </tr>
     </tbody>

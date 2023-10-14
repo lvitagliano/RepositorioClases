@@ -1,6 +1,6 @@
 <div class="list-group mt-5">
     <div class="list-group-item flex-column align-items-start col-lg-8 offset-lg-2">
-      <h3>Nueva Clase</h3>
+      <h3>{{Title}} </h3>
       <form (ngSubmit)="agregar()">
       <div class="form-group form-control-lg">
         <label class="form-label mt-2">Nombre</label>
@@ -13,7 +13,7 @@
         <div class="form-group">
             <label for="profesorSelect" class="form-label">Profesor</label>
             <select class="form-select" [(ngModel)]="profesorSeleccionado" [ngModelOptions]="{standalone: true}" id="profesorSelect">
-              <option [value]="profesor.profesorId" *ngFor="let profesor of listProfesores">{{ profesor.nombre }} {{ profesor.apellido }}</option>
+              <option [value]="profesorSeleccionado" *ngFor="let profesor of listProfesores">{{ profesor.nombre }} {{ profesor.apellido }}</option>
             </select>
           </div>
       </div>
@@ -21,7 +21,7 @@
         <div class="form-group">
             <label for="materiaSelect" class="form-label">Materia</label>
             <select class="form-select" [(ngModel)]="materiaSeleccionada" [ngModelOptions]="{standalone: true}" id="materiaSelect">
-              <option [value]="materia.materiaId"  *ngFor="let materia of listMaterias"> {{ materia.nombre }}</option>
+              <option [value]="materiaSeleccionada"  *ngFor="let materia of listMaterias"> {{ materia.nombre }}</option>
             </select>
           </div>
       </div>

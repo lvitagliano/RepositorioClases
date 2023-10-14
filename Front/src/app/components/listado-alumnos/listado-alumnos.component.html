@@ -15,7 +15,10 @@
         <th scope="row">{{ alumno.nombre}}</th>
         <th scope="row">{{ alumno.apellido}}</th>
         <td><a class="link mt-2" href="clasesporalumno/{{alumno.alumnoId}}">Ver clases</a></td>
-        <td><button type="button" (click)="delete(alumno.alumnoId)" class="btn btn-danger">Eliminar</button> </td>
+        <td>
+          <button type="button" (click)="delete(alumno.alumnoId)" class="btn btn-danger">Eliminar</button> 
+          <button type="button" (click)="redirigirARuta(alumno.alumnoId)" class="btn btn-warning" style="margin-left: 10px;">Editar</button> 
+        </td>
       </tr>
     </tbody>
   </table>

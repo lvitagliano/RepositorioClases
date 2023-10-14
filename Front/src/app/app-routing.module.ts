@@ -6,7 +6,7 @@ import { ClasesComponent } from './components/clases/clases.component';
 import { MateriasComponent } from './components/materias/materias.component';
 import { ListadoAlumnoPorClaseComponent } from './components/listado-alumno-por-clase/listado-alumno-por-clase.component';
 import { ListadoClasePorAlumnoComponent } from './components/listado-clase-por-alumno/listado-clase-por-alumno.component';
-
+import { EditarComponent } from './components/editar/editar.component';
 const routes: Routes = [
   { path: 'profesores', component: ProfesoresComponent }, 
   { path: 'alumnos', component: AlumnosComponent }, 
@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: '', component: ClasesComponent },
   { path: 'clasesporalumno/:id', component: ListadoClasePorAlumnoComponent },
   { path: 'alumnosporclase/:id', component: ListadoAlumnoPorClaseComponent },
-
+  { path: 'editar/:type/:id', component: EditarComponent },
 ];
 
 

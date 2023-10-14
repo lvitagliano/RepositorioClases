@@ -17,7 +17,9 @@
         <th scope="row">{{ clase.profesor.apellido}}</th>
         <th scope="row">{{ clase.materia.nombre}}</th>
         <td><a class="link mt-2" href="alumnosporclase/{{clase.claseId}}">Ver alumnos</a></td>
-        <td><button type="button" (click)="delete(clase.claseId)" class="btn btn-danger">Eliminar</button> </td>
+        <td><button type="button" (click)="delete(clase.claseId)" class="btn btn-danger">Eliminar</button>
+          <button type="button" (click)="redirigirARuta(clase.claseId)" class="btn btn-warning" style="margin-left: 10px;">Editar</button> 
+        </td>
       </tr>
     </tbody>
   </table>

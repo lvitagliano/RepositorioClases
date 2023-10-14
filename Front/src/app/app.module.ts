@@ -24,6 +24,7 @@ import { MateriasComponent } from './components/materias/materias.component';
 import { ClasesComponent } from './components/clases/clases.component';
 import { ClasesPorAlumnoComponent } from './components/clases-por-alumno/clases-por-alumno.component';
 import { AlumnoPorClaseComponent } from './components/alumno-por-clase/alumno-por-clase.component';
+import { EditarComponent } from './components/editar/editar.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { AlumnoPorClaseComponent } from './components/alumno-por-clase/alumno-po
     MateriasComponent,
     ClasesComponent,
     ClasesPorAlumnoComponent,
-    AlumnoPorClaseComponent
+    AlumnoPorClaseComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,

@@ -129,4 +129,40 @@ export class ClasesService {
 
     return this.http.post(apiUrl, { headers });
   }
+
+  UpdateProfesor(Id: any, ProfesorDto: any) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    const url = `https://localhost:7149/api/profesor/Id?Id=${Id}`; 
+
+    return this.http.put(url, ProfesorDto, { headers });
+  }
+
+  UpdateClase(Id: any, ClaseDto: any) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    const url = `https://localhost:7149/api/clase/Id?Id=${Id}`; 
+
+    return this.http.put(url, ClaseDto, { headers });
+  }
+
+  UpdateAlumno(Id: any, AlumnoDto: any) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    const url = `https://localhost:7149/api/alumno/Id?Id=${Id}`; 
+
+    return this.http.put(url, AlumnoDto, { headers });
+  }
+
+  UpdateMateria(Id: any, MateriaDto: any) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    const url = `https://localhost:7149/api/materia/Id?Id=${Id}`; 
+
+    return this.http.put(url, MateriaDto, { headers });
+  }
 }

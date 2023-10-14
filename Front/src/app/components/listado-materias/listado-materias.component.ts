@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ClasesService } from 'src/app/services/clases.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ClasesService } from 'src/app/services/clases.service';
 export class ListadoMateriasComponent {
   listMaterias: any = [];
 
-  constructor(private _claseService: ClasesService) {
+  constructor(private _claseService: ClasesService, private router: Router) {
 
   }
 
@@ -28,6 +29,10 @@ export class ListadoMateriasComponent {
 
   recargarGrilla() {
     this.buscarMaterias();
+  }
+
+   redirigirARuta(id: any) {
+    this.router.navigate([`/editar/materia/${id}`]);
   }
 
   buscarMaterias(){

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ClasesService } from 'src/app/services/clases.service';
 
 @Component({
@@ -12,7 +12,13 @@ export class FormularioAltaClaseComponent {
   profesorSeleccionado = '';
   materiaSeleccionada = '';
   nombre = '';
+  @Input() Title: string;
+  @Input() Id: any;
+  objeto: any; 
+
   constructor(private _claseService: ClasesService) {
+    this.Title ='';
+    this.Id =null;
 
   }
 
@@ -23,14 +29,30 @@ export class FormularioAltaClaseComponent {
       MateriaId: this.materiaSeleccionada
     }
 
-    this._claseService.crearClase(ClaseDto).subscribe(
-      (response) => {
-        console.log('Alumno creado exitosamente', response);
-      },
-      (error) => {
-        console.error('Error al crear el alumno', error);
-      }
-    );
+    if(this.objeto){
+      this.objeto.nombre = this.nombre ;
+      this.objeto.ProfesorId = this.profesorSeleccionado ;
+      this.objeto.MateriaId = this.materiaSeleccionada ;
+      this._claseService.UpdateClase(this.Id, this.objeto).subscribe(
+        (response) => {
+          console.log('Clase creada exitosamente', response);
+        },
+        (error) => {
+          console.error('Error al crear la Clase', error);
+        }
+      );
+
+    }else{
+      this._claseService.crearClase(ClaseDto).subscribe(
+        (response) => {
+          console.log('Clase editada exitosamente', response);
+        },
+        (error) => {
+          console.error('Error al editar la Clase', error);
+        }
+      );
+    }
+
   }
 
   buscarMaterias(){
@@ -43,8 +65,21 @@ export class FormularioAltaClaseComponent {
       this.listProfesores= data;
     });
   }
+
+  buscarClase(id: any){
+    this._claseService.getClaseById(id).subscribe(data => {
+      this.objeto = data;
+      this.nombre = this.objeto.nombre;
+      this.profesorSeleccionado = this.objeto.ProfesorId,
+      this.materiaSeleccionada = this.objeto.MateriaId
+    });
+  }
+
   ngOnInit():void {
     this.buscarProfesores();
     this.buscarMaterias();
+    if(this.Id != null){
+      this.buscarClase(this.Id);
+    }
   }
 }

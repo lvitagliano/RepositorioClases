@@ -7,6 +7,7 @@
         <th scope="col">Nombre</th>
         <th scope="col">Profesor</th>
         <th scope="col">Materia</th>
+        <th scope="col">Ver alumnos</th>
         <th scope="col">Accion</th>
       </tr>
     </thead>
@@ -15,11 +16,8 @@
         <th scope="row">{{ clase.nombre}}</th>
         <th scope="row">{{ clase.profesor.apellido}}</th>
         <th scope="row">{{ clase.materia.nombre}}</th>
-        <td><button type="button" (click)="myFunction(clase.claseId)" class="btn btn-danger">Eliminar</button>
-          <a class="nav-link mt-2" href="alumnosporclase/{{clase.claseId}}">Ver alumnos</a>
-       
-        </td>
-
+        <td><a class="link mt-2" href="alumnosporclase/{{clase.claseId}}">Ver alumnos</a></td>
+        <td><button type="button" (click)="delete(clase.claseId)" class="btn btn-danger">Eliminar</button> </td>
       </tr>
     </tbody>
   </table>

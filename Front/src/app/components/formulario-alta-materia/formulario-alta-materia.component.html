@@ -1,15 +1,16 @@
 <div class="list-group mt-5">
     <div class="list-group-item flex-column align-items-start col-lg-8 offset-lg-2">
       <h3>Nueva Materia</h3>
-      <form action="">
-      <div class="form-group">
+      <form (ngSubmit)="agregar()">
+        <div class="form-group">
         <label class="form-label mt-2">Nombre</label>
         <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInput" placeholder="Nombre">
+          <input type="text" class="form-control" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}" id="nombreInput" placeholder="Nombre">
           <label for="NombreInput">Nombre</label>
         </div>
       </div>
+      <button type="submit" class="btn btn-primary btn-block btn-lg">Guardar</button>
+
     </form>
-    <button class="btn btn-primary btn-block btn-lg">Guardar</button>
     </div>
   </div>

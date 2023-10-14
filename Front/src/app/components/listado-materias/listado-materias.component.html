@@ -12,7 +12,7 @@
       <tr class="table-active">
         <tr *ngFor="let materias of listMaterias">
           <th scope="row">{{ materias.nombre}}</th>
-          <td><button type="button" (click)="myFunction(materias.MateriaId)" class="btn btn-danger">Eliminar</button></td>
+          <td><button type="button" (click)="delete(materias.materiaId)" class="btn btn-danger">Eliminar</button></td>
   
         </tr>
     </tbody>

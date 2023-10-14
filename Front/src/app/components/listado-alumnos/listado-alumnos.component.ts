@@ -13,18 +13,31 @@ export class ListadoAlumnosComponent {
 
   }
 
-  myFunction(id: any){
-    console.log(id);
-    this._claseService.deleteProfesorById(id);
+  delete(id: any) {
 
+    this._claseService.deleteAlumnoById(id).subscribe(
+      (response) => {
+        console.log('Alumno eliminado exitosamente', response);
+        this.recargarGrilla();
+
+      },
+      (error) => {
+        console.error('Error al eliminar el Alumno', error);
+      }
+    );
   }
-  buscarProfesores(){
+
+  recargarGrilla() {
+    this.buscarAlumnoss();
+  }
+
+  buscarAlumnoss(){
     this._claseService.getAlumnos().subscribe(data => {
       this.listAlumnos= data;
     });
   }
   ngOnInit():void {
-    this.buscarProfesores();
+    this.buscarAlumnoss();
   }
 
 

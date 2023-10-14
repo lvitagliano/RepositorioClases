@@ -13,11 +13,23 @@ export class ListadoClasesComponent {
 
   }
 
-  myFunction(id: any){
-    console.log(id);
-    this._claseService.deleteProfesorById(id);
+  delete(id: any) {
 
+    this._claseService.deleteClaseById(id).subscribe(
+      (response) => {
+        console.log('Materia eliminada exitosamente', response);
+        this.recargarGrilla();
+      },
+      (error) => {
+        console.error('Error al eliminar la Materia', error);
+      }
+    );
   }
+
+  recargarGrilla() {
+    this.buscarProfesores();
+  }
+
   buscarProfesores(){
     this._claseService.getClases().subscribe(data => {
       this.listClases= data;

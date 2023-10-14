@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ClasesService } from '../../services/clases.service';
 
 @Component({
   selector: 'app-formulario-alta-alumno-clase',
@@ -6,27 +7,38 @@ import { Component } from '@angular/core';
   styleUrls: ['./formulario-alta-alumno-clase.component.css']
 })
 export class FormularioAltaAlumnoClaseComponent {
+  listClases: any = [];
+  listAlumnos: any = [];
   claseSeleccionada = '';
   alumnoSeleccionado = '';
 
-  alumnos: any[] = [
-    {value: 'General', nombre: 'General'},
-    {value: '2', nombre: '2'},
-    {value: '3', nombre: '3'}
-  ];
+  constructor(private _claseService: ClasesService) {
 
-  clases: any[] = [
-    {value: 'General', nombre: 'General'},
-    {value: '2', nombre: '2'},
-    {value: '3', nombre: '3'}
-  ]
+  }
 
-  /**
-   *
-   */
-  constructor() {}
+  agregar() {
+    this._claseService.crearClaseAlumno(this.claseSeleccionada, this.alumnoSeleccionado).subscribe(
+      (response) => {
+        console.log('Alumno creado exitosamente', response);
+      },
+      (error) => {
+        console.error('Error al crear el alumno', error);
+      }
+    );
+  }
 
-  agregarelacion() {
-    console.log(this.alumnoSeleccionado + "Hello");
+  buscarClases(){
+    this._claseService.getClases().subscribe(data => {
+      this.listClases= data;
+    });
+  }
+  buscarAlumnos(){
+    this._claseService.getAlumnos().subscribe(data => {
+      this.listAlumnos= data;
+    });
+  }
+  ngOnInit():void {
+    this.buscarAlumnos();
+    this.buscarClases();
   }
 }

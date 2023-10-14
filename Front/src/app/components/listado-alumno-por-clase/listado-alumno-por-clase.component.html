@@ -1,19 +1,18 @@
 <div class="list-group mt-5">
     <div class="list-group-item flex-column align-items-start col-lg-8 offset-lg-2">
-        <h3>Alumno por clase</h3>
+      <h3>{{clase.nombre}}</h3>
+        <h3>Alumnos por clase</h3>
 <table class="table table-hover">
     <thead>
       <tr>
         <th scope="col">Nombre</th>
         <th scope="col">Apellido</th>
-        <th scope="col">Accion</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let alumnos of listAlumnos">
         <th scope="row">{{ alumnos.nombre}}</th>
         <th scope="row">{{ alumnos.apellido}}</th>
-        <td><button type="button" (click)="myFunction(alumnos.AlumnoId)" class="btn btn-danger">Eliminar</button></td>
 
       </tr>
     </tbody>

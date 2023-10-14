@@ -13,7 +13,7 @@
       <tr *ngFor="let profesor of listProfesores">
         <th scope="row">{{ profesor.nombre}}</th>
         <th scope="row">{{ profesor.apellido}}</th>
-        <td><button type="button" (click)="myFunction(profesor.profesorId)" class="btn btn-danger">Eliminar</button></td>
+        <td><button type="button" (click)="delete(profesor.profesorId)" class="btn btn-danger">Eliminar</button></td>
 
       </tr>
     </tbody>

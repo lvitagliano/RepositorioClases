@@ -8,10 +8,10 @@ import { ListadoAlumnoPorClaseComponent } from './components/listado-alumno-por-
 import { ListadoClasePorAlumnoComponent } from './components/listado-clase-por-alumno/listado-clase-por-alumno.component';
 
 const routes: Routes = [
-  { path: 'profesores', component: ProfesoresComponent }, // Ruta raíz
-  { path: 'alumnos', component: AlumnosComponent }, // Ruta raíz
-  { path: 'materias', component: MateriasComponent }, // Ruta raíz
-  { path: 'clases', component: ClasesComponent }, // Ruta raíz
+  { path: 'profesores', component: ProfesoresComponent }, 
+  { path: 'alumnos', component: AlumnosComponent }, 
+  { path: 'materias', component: MateriasComponent }, 
+  { path: '', component: ClasesComponent },
   { path: 'clasesporalumno/:id', component: ListadoClasePorAlumnoComponent },
   { path: 'alumnosporclase/:id', component: ListadoAlumnoPorClaseComponent },
 

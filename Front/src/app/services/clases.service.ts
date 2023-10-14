@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -60,22 +60,73 @@ export class ClasesService {
   }
 
   deleteProfesorById(id: any){
-    const URL = this.BaseURL + "profesor/"+ id
-    return this.http.delete(URL);
+
+    const url = `https://localhost:7149/api/profesor/${id}`;
+    return this.http.delete(url);
   }
 
   deleteAlumnoById(id: any){
-    const URL = this.BaseURL + "alumno/"+ id
-    return this.http.delete(URL);
+    const url = `https://localhost:7149/api/alumno/${id}`;
+    return this.http.delete(url);
   }
 
   deleteClaseById(id: any){
-    const URL = this.BaseURL + "clase/"+ id
-    return this.http.delete(URL);
+    const url = `https://localhost:7149/api/clase/${id}`;
+    return this.http.delete(url);
   }
 
   deleteMateriaById(id: any){
-    const URL = this.BaseURL + "materia/"+ id
-    return this.http.delete(URL);
+    const url = `https://localhost:7149/api/materia/${id}`;
+    return this.http.delete(url);
+  }
+
+  deleteAlumnoClaseById(id: any){
+    const url = `https://localhost:7149/api/alumnosPorClase/${id}`;
+    return this.http.delete(url);
+  }
+
+  crearClase(ClaseDto: any) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    const apiUrl = this.BaseURL + 'clase/Create'; 
+
+    return this.http.post(apiUrl, ClaseDto, { headers });
+  }
+
+  crearMateria(MateriaDto: any) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    const apiUrl = this.BaseURL + 'materia/Create'; 
+
+    return this.http.post(apiUrl, MateriaDto, { headers });
+  }
+
+  crearProfesor(ProfesorDto: any) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    const apiUrl = this.BaseURL + 'profesor/Create'; 
+
+    return this.http.post(apiUrl, ProfesorDto, { headers });
+  }
+
+  crearAlumno(AlumnoDto: any) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    const apiUrl = this.BaseURL + 'alumno/Create'; 
+
+    return this.http.post(apiUrl, AlumnoDto, { headers });
+  }
+
+  crearClaseAlumno(ClaseId: any, AlumnoId: any) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    const apiUrl = `https://localhost:7149/api/clase/${ClaseId}/${AlumnoId}`; 
+
+    return this.http.post(apiUrl, { headers });
   }
 }

@@ -48,5 +48,22 @@ namespace TestClases.Controllers
             }
         }
 
+        [HttpDelete("{ClaseAlumnoId}")]
+        public async Task<IActionResult> QuitarAlumnoClase(int ClaseAlumnoId)
+        {
+
+            try
+            {
+                var deleteItem = await _context.ClaseAlumnos.FindAsync(ClaseAlumnoId);
+                _context.Remove(deleteItem);
+                await _context.SaveChangesAsync();
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

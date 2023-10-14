@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bgH5+pfwCWV21v6lErfhikiplETqCaeBew6AFqa7IJUhawygL59GekkYRC72bYeroWHPbw+fHrEvtIc47hbHZg==",
+  "dgSpecHash": "RtEIPH36ZKfcr2j5fZH2cN+6jLAMov2Zx0BhIT9ry2OpQPh12B7sqoTxkRRj3tg1udnawWCCIyQVQH8d8/GNyw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Escritorio\\Lucas\\Proyectos\\TestClases\\TestClases.csproj",
+  "projectFilePath": "C:\\Proyectos\\RepositorioClases\\TestClases\\TestClases.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lukas\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
